@@ -1,0 +1,31 @@
+<!-- 
+<div class="container-fluid" style="overflow: hidden;">
+    <img [src]="detalle.url" class="w-50" alt=""><br>
+    <h2>{{detalle.nombre}}</h2>
+    <h4> {{detalle.precio}}</h4>
+    <li *ngFor="let ing of detalle.ingredientes"> {{ing}} </li>
+    <hr>
+    <p class="text-justify"> {{detalle.desc}} </p>
+</div> -->  
+    <div class="card text-center" *ngIf="detalle; else vacio">
+        <div class="card-header">
+            <h3>{{ detalle.nombre }} </h3>
+        </div>
+        <div class="card-body">
+                <img class="imagen" src="{{ detalle.url }}" alt="">
+                <p class="card-text" style="text-align: justify"> {{ detalle.desc }} </p>
+                <h4> Precio: RD${{ detalle.precio}} </h4> 
+                <li *ngFor="let ing of detalle.ingredientes">
+                        {{ ing }}
+                </li>
+         </div>
+         <div class="card-footer text-muted">
+            <a href="#" class="btn btn-primary">Comprar</a>   
+        </div>
+    </div>
+
+
+    <ng-template #vacio>
+        <h1>No estas seleccionando ningun postre</h1> 
+    </ng-template>
+    

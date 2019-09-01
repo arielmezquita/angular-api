@@ -1,0 +1,16 @@
+<h2>Menu de Usuarios</h2>
+
+<div class="container">
+  <div class="row">
+    <div *ngFor="let usuarios of users; let i =index" class="card mx-2 mt-2" style="width: 18rem;">
+      <img [src]="usuarios.picture.large" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ usuarios.name.first }} {{ usuarios.name.last }}</h5>
+        <p class="card-text">Email: {{ usuarios.email }} </p>
+        <p class="card-text">Direccion: {{ usuarios.location.city }} </p>
+        <p class="card-text">Telefono: {{ usuarios.phone }} </p>
+        <a href="#" class="btn btn-primary" routerLink="/detalles" [queryParams]="postre">Agregar</a>
+      </div>
+    </div>
+  </div>
+</div>
